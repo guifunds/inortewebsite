@@ -15,7 +15,7 @@ const SERVICOS = [
 ]
 
 const NUMEROS = [
-  { prefixo: '+', valor: '10', rotulo: 'anos de experiência da equipe em contabilidade e gestão' },
+  { prefixo: '+', valor: '25', rotulo: 'anos de experiência da equipe em contabilidade e gestão' },
   { prefixo: '', valor: '6', rotulo: 'frentes de atuação integradas em um só parceiro' },
   { prefixo: '', valor: '48h', rotulo: 'prazo médio de resposta para demandas dos clientes' },
   { prefixo: '', valor: '100%', rotulo: 'digital no atendimento, humano na relação' },
