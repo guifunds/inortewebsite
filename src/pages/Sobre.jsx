@@ -70,17 +70,16 @@ export default function Sobre() {
           <Link to="/contato" className="btn btn-outline" style={{ fontSize: 15, padding: '15px 32px' }}>Falar com a equipe</Link>
         </div>
         <div className="reveal">
-          <svg width="100%" height="420" viewBox="0 0 560 420" style={{ borderRadius: 20, display: 'block' }}>
-            <defs>
-              <pattern id="stripes2" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <rect width="14" height="14" fill="#eef2fb" />
-                <rect width="7" height="14" fill="#e3e9f8" />
-              </pattern>
-            </defs>
-            <rect width="560" height="420" rx="20" fill="url(#stripes2)" />
-            <text x="280" y="206" textAnchor="middle" fontFamily="monospace" fontSize="15" fill="#7a86a8">[ foto da equipe ]</text>
-            <text x="280" y="230" textAnchor="middle" fontFamily="monospace" fontSize="12" fill="#9aa4c0">substitua por uma imagem real</text>
-          </svg>
+          <img src="/images/escritorio.jpg" alt="Escritório da Inorte" style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+        </div>
+      </section>
+
+      <section style={{ padding: '0 48px 110px' }}>
+        <p className="kicker reveal" style={{ marginBottom: 32 }}>NOSSO ESPAÇO</p>
+        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <img className="reveal" src="/images/recepcao.jpg" alt="Recepção" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/sala-reuniao.jpg" alt="Sala de reunião" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/estacoes.jpg" alt="Estações de trabalho" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
         </div>
       </section>
 

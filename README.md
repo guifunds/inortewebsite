@@ -37,6 +37,5 @@ vercel
 ## Pendências antes de publicar
 
 - Trocar o CNPJ placeholder no `Footer.jsx`
-- Substituir os placeholders de foto (Home e Sobre) por imagens reais
 - Revisar os números da seção "Por que a Inorte" (`src/pages/Home.jsx`)
 - Adicionar favicon (ex.: `public/favicon.svg` + link no `index.html`)

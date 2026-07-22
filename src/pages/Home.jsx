@@ -88,17 +88,7 @@ export default function Home() {
       {/* Sobre teaser */}
       <section className="grid-2" style={{ padding: '120px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
         <div className="reveal">
-          <svg width="100%" height="440" viewBox="0 0 560 440" style={{ borderRadius: 20, display: 'block' }}>
-            <defs>
-              <pattern id="stripes" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <rect width="14" height="14" fill="#eef2fb" />
-                <rect width="7" height="14" fill="#e3e9f8" />
-              </pattern>
-            </defs>
-            <rect width="560" height="440" rx="20" fill="url(#stripes)" />
-            <text x="280" y="216" textAnchor="middle" fontFamily="monospace" fontSize="15" fill="#7a86a8">[ foto da equipe / escritório ]</text>
-            <text x="280" y="240" textAnchor="middle" fontFamily="monospace" fontSize="12" fill="#9aa4c0">substitua por uma imagem real</text>
-          </svg>
+          <img src="/images/recepcao.jpg" alt="Recepção do escritório da Inorte" style={{ width: '100%', height: 440, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
         </div>
         <div className="reveal">
           <p className="kicker" style={{ marginBottom: 20 }}>SOBRE A INORTE</p>
