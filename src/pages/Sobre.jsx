@@ -70,7 +70,7 @@ export default function Sobre() {
           <Link to="/contato" className="btn btn-outline" style={{ fontSize: 15, padding: '15px 32px' }}>Falar com a equipe</Link>
         </div>
         <div className="reveal">
-          <img src="/images/escritorio.jpg" alt="Escritório da Inorte" style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img src="/images/empresarial.jpeg" alt="Escritório da Inorte" style={{ width: '100%', height: 420, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
         </div>
       </section>
 
@@ -79,7 +79,6 @@ export default function Sobre() {
         <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           <img className="reveal" src="/images/recepcao.jpg" alt="Recepção" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/sala-reuniao.jpg" alt="Sala de reunião" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
-          <img className="reveal" src="/images/estacoes.jpg" alt="Estações de trabalho" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/sala-reuniao-2.jpg" alt="Sala de reunião menor" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/corredor-quadros.jpg" alt="Corredor com quadros" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/arquivo.jpg" alt="Arquivo" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />

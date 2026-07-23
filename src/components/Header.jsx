@@ -26,7 +26,7 @@ export default function Header() {
         <NavLink to="/contato" className={({ isActive }) => (isActive ? 'active' : '')}>Contato</NavLink>
       </nav>
       <div className="right">
-        <a href={PHONE_TEL} className="phone">{PHONE_DISPLAY}</a>
+
         <a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-blue sm">Fale conosco</a>
       </div>
     </header>
