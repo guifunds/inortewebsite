@@ -80,6 +80,10 @@ export default function Sobre() {
           <img className="reveal" src="/images/recepcao.jpg" alt="Recepção" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/sala-reuniao.jpg" alt="Sala de reunião" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
           <img className="reveal" src="/images/estacoes.jpg" alt="Estações de trabalho" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/sala-reuniao-2.jpg" alt="Sala de reunião menor" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/corredor-quadros.jpg" alt="Corredor com quadros" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/arquivo.jpg" alt="Arquivo" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
+          <img className="reveal" src="/images/copa.jpg" alt="Copa" style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
         </div>
       </section>
 
