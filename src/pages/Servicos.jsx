@@ -28,7 +28,7 @@ export default function Servicos() {
 
       <section style={{ padding: '0 48px 100px', display: 'flex', flexDirection: 'column' }}>
         {SERVICOS.map((s) => (
-          <div key={s.num} className="reveal" style={{ display: 'grid', gridTemplateColumns: '120px 1.1fr 1.6fr auto', gap: 40, alignItems: 'center', padding: '44px 0', borderTop: '1px solid rgba(10,10,20,.1)' }}>
+          <div key={s.num} className="reveal servico-row" style={{ display: 'grid', gridTemplateColumns: '120px 1.1fr 1.6fr auto', gap: 40, alignItems: 'center', padding: '44px 0', borderTop: '1px solid rgba(10,10,20,.1)' }}>
             <span className="xp" style={{ fontWeight: 800, fontSize: 44, color: '#004bff' }}>{s.num}</span>
             <h2 style={{ margin: 0, fontSize: 'clamp(22px, 2vw, 30px)', fontWeight: 700, letterSpacing: '-.01em', lineHeight: 1.15 }}>{s.titulo}</h2>
             <div>

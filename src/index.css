@@ -47,8 +47,18 @@ h1, h2, h3 { text-wrap: balance; }
 .header nav { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 600; }
 .header nav a { color: var(--ink); }
 .header nav a:hover, .header nav a.active { color: var(--blue); }
-.header .right { display: flex; align-items: center; gap: 24px; }
+.header .right { display: flex; align-items: center; gap: 20px; }
 .header .phone { font-size: 14px; font-weight: 600; color: var(--ink); }
+.header nav .menu-whatsapp { display: none; }
+
+.menu-toggle {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 32px; height: 32px; background: none; border: none; padding: 0; cursor: pointer; flex-shrink: 0;
+}
+.menu-toggle span { display: block; height: 2px; width: 100%; background: var(--ink); border-radius: 2px; transition: transform .25s ease, opacity .25s ease; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; font-weight: 700; cursor: pointer; }
 .btn-blue { background: var(--blue); color: #fff; padding: 18px 36px; font-size: 16px; }
@@ -100,8 +110,38 @@ input::placeholder, textarea::placeholder { color: #9a9aa6; }
 label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--muted-2); }
 
 @media (max-width: 900px) {
-  .header { padding: 14px 20px; }
-  .header nav, .header .phone { display: none; }
-  .grid-2, .grid-3, .grid-4, .footer .cols { grid-template-columns: 1fr !important; }
+  .header { padding: 14px 20px; flex-wrap: wrap; }
+  .header .phone { display: none; }
+  .header .right .btn-blue.sm { display: none; }
+  .menu-toggle { display: flex; }
+
+  .header nav {
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height .3s ease, opacity .25s ease, margin-top .3s ease;
+  }
+  .header nav.open {
+    max-height: 420px;
+    opacity: 1;
+    margin-top: 18px;
+    border-top: 1px solid rgba(10,10,20,.08);
+  }
+  .header nav a, .header nav .menu-whatsapp {
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(10,10,20,.06);
+    font-size: 16px;
+  }
+  .header nav .menu-whatsapp { display: block; color: var(--blue); font-weight: 800; border-bottom: none; }
+
+  .grid-2, .grid-3, .grid-4, .servico-row, .footer .cols { grid-template-columns: 1fr !important; }
+  .servico-row { gap: 14px !important; align-items: start !important; padding: 32px 0 !important; }
+  .servico-row a.btn-outline.sm { width: 100%; justify-content: center; }
   section { padding-left: 20px !important; padding-right: 20px !important; }
 }

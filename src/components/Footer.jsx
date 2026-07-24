@@ -31,7 +31,6 @@ export default function Footer() {
       </div>
       <div className="bottom">
         <span>© {new Date().getFullYear()} Inorte Contabilidade e Gestão Empresarial</span>
-        <span>CNPJ 00.000.000/0001-00</span>
       </div>
     </footer>
   )
