@@ -10,7 +10,7 @@ const SERVICOS = [
   { num: '03', titulo: 'Departamento pessoal e folha', desc: 'Gestão completa da rotina trabalhista: admissões, folha de pagamento, férias, rescisões e eSocial sem erros e sem atrasos.', itens: ['Folha de pagamento', 'Admissão e rescisão', 'eSocial e FGTS', 'Férias e 13º'] },
   { num: '04', titulo: 'Planejamento tributário', desc: 'Estudo detalhado do regime tributário ideal para o seu negócio, reduzindo a carga de impostos de forma legal e segura.', itens: ['Análise de regime', 'Simulações comparativas', 'Redução legal de carga', 'Revisão de tributos'] },
   { num: '05', titulo: 'Consultoria e gestão empresarial', desc: 'Indicadores, fluxo de caixa, precificação e apoio à tomada de decisão: contabilidade que participa da estratégia do negócio.', itens: ['Indicadores e relatórios', 'Fluxo de caixa', 'Precificação', 'Apoio à decisão'] },
-  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Acompanhamento completo para pequenos negócios: declarações, guias, regularização e a hora certa de migrar de regime.', itens: ['DASN e guias', 'Regularização', 'Desenquadramento', 'Migração de regime'] },
+  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Acompanhamento completo para pequenos negócios: declarações, guias, regularização e a hora certa de migrar de regime. Também atendemos médias e grandes empresas nos regimes de Lucro Presumido e Lucro Real.', itens: ['DASN e guias', 'Regularização', 'Desenquadramento', 'Lucro Presumido e Real'] },
 ]
 
 export default function Servicos() {

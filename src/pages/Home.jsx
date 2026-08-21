@@ -11,7 +11,7 @@ const SERVICOS = [
   { num: '03', titulo: 'Departamento pessoal', desc: 'Folha de pagamento, admissões, férias e eSocial com precisão e sem retrabalho.' },
   { num: '04', titulo: 'Planejamento tributário', desc: 'Análise do regime ideal para pagar somente o imposto necessário, dentro da lei.' },
   { num: '05', titulo: 'Consultoria e gestão', desc: 'Indicadores, fluxo de caixa e apoio à decisão para crescer com segurança.' },
-  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Regularização, declarações e acompanhamento completo para pequenos negócios.' },
+  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Regularização, declarações e acompanhamento completo para pequenos negócios. Atendemos também médias e grandes empresas em Lucro Presumido e Lucro Real.' },
 ]
 
 const NUMEROS = [
