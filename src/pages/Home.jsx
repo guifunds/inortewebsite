@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 import WhatsAppFab from '../components/WhatsAppFab.jsx'
+import { Pill, Faq } from '../components/System.jsx'
 import { useReveal } from '../lib/useReveal.js'
 import { WHATSAPP } from '../lib/contact.js'
 
@@ -14,12 +16,75 @@ const SERVICOS = [
   { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Regularização, declarações e acompanhamento completo para pequenos negócios. Atendemos também médias e grandes empresas em Lucro Presumido e Lucro Real.' },
 ]
 
-const NUMEROS = [
-  { prefixo: '+', valor: '25', rotulo: 'anos de experiência da equipe em contabilidade e gestão' },
-  { prefixo: '', valor: '6', rotulo: 'frentes de atuação integradas em um só parceiro' },
-  { prefixo: '', valor: '48h', rotulo: 'prazo médio de resposta para demandas dos clientes' },
-  { prefixo: '', valor: '100%', rotulo: 'digital no atendimento, humano na relação' },
+const ETAPAS = [
+  {
+    titulo: 'Diagnóstico',
+    desc: 'Entendemos o momento da empresa, o regime atual e as pendências — e mostramos o que pode melhorar.',
+    plano: 'O que olhamos primeiro',
+    itens: ['Regime tributário atual', 'Pendências fiscais e trabalhistas', 'Rotina de documentos', 'Oportunidades de melhoria'],
+  },
+  {
+    titulo: 'Implantação',
+    desc: 'Organizamos documentos, acessos e rotinas para a transição acontecer sem travar a operação.',
+    plano: 'Como fazemos a transição',
+    itens: ['Transferência de documentos', 'Acessos e certificados', 'Calendário de obrigações', 'Responsável definido'],
+  },
+  {
+    titulo: 'Acompanhamento',
+    desc: 'Obrigações em dia, números traduzidos em relatórios e um responsável que conhece o seu negócio.',
+    plano: 'O que acontece todo mês',
+    itens: ['Impostos apurados e guias enviadas', 'Folha e eSocial processados', 'Relatórios que o dono entende', 'Resposta média em 48h'],
+  },
 ]
+
+const NUMEROS = [
+  { valor: '+25', rotulo: 'anos de experiência da equipe em contabilidade e gestão' },
+  { valor: '6', rotulo: 'frentes de atuação integradas em um só parceiro' },
+  { valor: '48h', rotulo: 'prazo médio de resposta para demandas dos clientes' },
+  { valor: '100%', rotulo: 'digital no atendimento, humano na relação' },
+]
+
+function Processo() {
+  const [ativo, setAtivo] = useState(0)
+  const etapa = ETAPAS[ativo]
+  return (
+    <section className="band process on-blue">
+      <div className="wrap">
+        <div className="process-panel reveal">
+          <div>
+            <p className="eyebrow">Como começamos</p>
+            <h2 className="h2">Uma transição sem atrito, em três etapas.</h2>
+            <ul className="steps">
+              {ETAPAS.map((e, i) => (
+                <li key={e.titulo}>
+                  <button type="button" className={`step-btn${ativo === i ? ' on' : ''}`} onClick={() => setAtivo(i)} aria-pressed={ativo === i}>
+                    <span className="num">{i + 1}</span>
+                    <span>
+                      <span className="t" style={{ display: 'block' }}>{e.titulo}</span>
+                      <span className="d" style={{ display: 'block' }}>{e.desc}</span>
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="plan-card">
+            <div className="pair" aria-hidden="true">
+              <span className="av inorte"><i>IN</i>Equipe Inorte</span>
+              <span className="wave">{[10, 18, 24, 14, 20, 8, 16].map((h, i) => <b key={i} style={{ height: h, animationDelay: `${i * 0.12}s` }} />)}</span>
+              <span className="av cliente"><i>SE</i>Sua empresa</span>
+            </div>
+            <div key={ativo} className="plan-fade">
+              <p className="eyebrow" style={{ color: 'rgba(255,255,255,.75)', marginBottom: 8 }}>Etapa {ativo + 1} de 3</p>
+              <h3 className="h4">{etapa.plano}</h3>
+              {etapa.itens.map((it) => <div key={it} className="plan-row">{it}</div>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function Home() {
   useReveal()
@@ -27,99 +92,115 @@ export default function Home() {
     <>
       <Header />
 
-      {/* Hero imersivo */}
-      <section style={{ minHeight: '100vh', background: '#004bff', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '160px 48px 80px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.12), transparent 55%)' }} />
-        <p className="fade-up" style={{ margin: '0 0 28px', fontSize: 14, fontWeight: 700, letterSpacing: '.28em', color: 'rgba(255,255,255,.75)', position: 'relative' }}>
-          INORTE — CONTABILIDADE E GESTÃO EMPRESARIAL
-        </p>
-        <h1 className="xp fade-up d1" style={{ margin: 0, fontWeight: 800, fontSize: 'clamp(52px, 8vw, 124px)', lineHeight: 0.98, letterSpacing: '-.02em', maxWidth: 1300, position: 'relative' }}>
-          Números claros.<br />Decisões seguras.
-        </h1>
-        <div className="fade-up d2" style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 52, position: 'relative', flexWrap: 'wrap' }}>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-white">Falar no WhatsApp →</a>
-          <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, color: 'rgba(255,255,255,.85)', maxWidth: 440 }}>
-            Contabilidade consultiva para empresas de todos os portes, do MEI à média empresa.
-          </p>
+      {/* Hero */}
+      <section className="band hero on-blue" data-hero>
+        <div className="wrap hero-grid">
+          <div>
+            <p className="eyebrow fade-up">Inorte — Contabilidade e Gestão Empresarial</p>
+            <h1 className="display fade-up d1">Números claros.<br />Decisões seguras.</h1>
+            <p className="lead fade-up d2">
+              Contabilidade consultiva para empresas de todos os portes, do MEI à média empresa.
+            </p>
+            <div className="actions fade-up d3">
+              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn lg btn-white">Falar no WhatsApp <span className="arr">→</span></a>
+              <Link to="/servicos" className="btn lg btn-ghost-white">Ver serviços</Link>
+            </div>
+          </div>
+          <div className="photo fade-up d2">
+            <img src="/images/recepcao.jpg" alt="Recepção do escritório da Inorte" />
+            <div className="pill-top float-in d1"><Pill solid>Atendimento 100% online</Pill></div>
+            <div className="pills">
+              <span className="float-in d2"><Pill>Obrigações do mês em dia</Pill></span>
+              <span className="float-in d3"><Pill>Folha processada</Pill></span>
+              <span className="float-in d4"><Pill>Resposta média em 48h</Pill></span>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Serviços */}
-      <section style={{ padding: '120px 48px' }}>
-        <div className="reveal" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, marginBottom: 64, flexWrap: 'wrap' }}>
-          <h2 className="xp" style={{ margin: 0, fontWeight: 800, fontSize: 'clamp(36px, 4.4vw, 64px)', letterSpacing: '-.02em', lineHeight: 1.02 }}>
-            O que fazemos<br />pela sua empresa
-          </h2>
-          <Link to="/servicos" style={{ fontWeight: 700, fontSize: 16, whiteSpace: 'nowrap', paddingBottom: 8, borderBottom: '2px solid #004bff' }}>
-            Ver todos os serviços →
-          </Link>
-        </div>
-        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-          {SERVICOS.map((s) => (
-            <Link key={s.num} to="/servicos" className="card reveal">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <span className="xp" style={{ fontWeight: 700, fontSize: 14, color: '#004bff' }}>{s.num}</span>
-                <span style={{ fontSize: 20, color: '#004bff' }}>↗</span>
-              </div>
-              <div>
-                <h3 style={{ margin: '0 0 10px', fontSize: 21, fontWeight: 700, letterSpacing: '-.01em' }}>{s.titulo}</h3>
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: '#5a5a68' }}>{s.desc}</p>
-              </div>
-            </Link>
-          ))}
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head reveal">
+            <p className="eyebrow">Serviços</p>
+            <h2 className="h2">O que fazemos pela sua empresa</h2>
+            <p className="body">Seis frentes integradas, conduzidas pela mesma equipe — do primeiro CNPJ à estratégia tributária.</p>
+          </div>
+          <div className="grid-3">
+            {SERVICOS.map((s) => (
+              <Link key={s.num} to="/servicos" className="card svc reveal">
+                <div className="top">
+                  <span className="marker">{s.num}</span>
+                  <span className="go">↗</span>
+                </div>
+                <div>
+                  <h3 className="h4">{s.titulo}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ marginTop: 32 }} className="reveal">
+            <Link to="/servicos" className="link">Ver todos os serviços <span className="arr">→</span></Link>
+          </div>
         </div>
       </section>
 
-      {/* Números */}
-      <section style={{ background: '#0a0a14', color: '#fff', padding: '110px 48px' }}>
-        <p className="kicker reveal" style={{ marginBottom: 56 }}>POR QUE A INORTE</p>
-        <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 48 }}>
-          {NUMEROS.map((n) => (
-            <div key={n.rotulo} className="reveal" style={{ borderTop: '1px solid rgba(255,255,255,.18)', paddingTop: 28 }}>
-              <div className="xp" style={{ fontWeight: 800, fontSize: 'clamp(40px, 4.4vw, 64px)', lineHeight: 1 }}>
-                <span style={{ color: '#004bff' }}>{n.prefixo}</span>{n.valor}
-              </div>
-              <div style={{ marginTop: 14, fontSize: 15, lineHeight: 1.5, color: 'rgba(255,255,255,.65)' }}>{n.rotulo}</div>
+      <Processo />
+
+      {/* Pausa: por que a Inorte */}
+      <section className="section">
+        <div className="wrap">
+          <div className="statement reveal">
+            <div>
+              <p className="eyebrow">Por que a Inorte</p>
+              <h2 className="h3">Mais que contabilidade: direção para decidir.</h2>
             </div>
-          ))}
+            <div>
+              <p className="body">
+                A Inorte nasceu para ser a bússola financeira das empresas que atende. Unimos rigor técnico contábil e visão de gestão para transformar obrigações fiscais em informação estratégica.
+              </p>
+              <p className="body">
+                Atendemos de MEIs a médias empresas com o mesmo compromisso: números em dia, riscos sob controle e um caminho claro de crescimento.
+              </p>
+              <Link to="/sobre" className="link" style={{ marginTop: 8 }}>Conheça a empresa <span className="arr">→</span></Link>
+            </div>
+          </div>
+          <div className="stats">
+            {NUMEROS.map((n) => (
+              <div key={n.valor} className="card reveal">
+                <div className="stat">{n.valor}</div>
+                <p>{n.rotulo}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Sobre teaser */}
-      <section className="grid-2" style={{ padding: '120px 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
-        <div className="reveal">
-          <img src="/images/recepcao.jpg" alt="Recepção do escritório da Inorte" style={{ width: '100%', height: 440, objectFit: 'cover', borderRadius: 20, display: 'block' }} />
-        </div>
-        <div className="reveal">
-          <p className="kicker" style={{ marginBottom: 20 }}>SOBRE A INORTE</p>
-          <h2 className="xp" style={{ margin: '0 0 24px', fontWeight: 800, fontSize: 'clamp(32px, 3.4vw, 50px)', letterSpacing: '-.02em', lineHeight: 1.05 }}>
-            Mais que contabilidade: direção para decidir.
-          </h2>
-          <p style={{ margin: '0 0 16px', fontSize: 17, lineHeight: 1.65, color: '#3c3c48' }}>
-            A Inorte nasceu para ser a bússola financeira das empresas que atende. Unimos rigor técnico contábil e visão de gestão para transformar obrigações fiscais em informação estratégica.
-          </p>
-          <p style={{ margin: '0 0 36px', fontSize: 17, lineHeight: 1.65, color: '#3c3c48' }}>
-            Atendemos de MEIs a médias empresas com o mesmo compromisso: números em dia, riscos sob controle e um caminho claro de crescimento.
-          </p>
-          <Link to="/sobre" className="btn btn-outline" style={{ fontSize: 15, padding: '15px 32px' }}>Conheça a empresa</Link>
+      {/* Equipe + foto */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap feature">
+          <div className="photo reveal">
+            <img src="/images/sala-reuniao.jpg" alt="Sala de reunião da Inorte" />
+            <div className="pills"><Pill>Atendimento com hora marcada</Pill></div>
+          </div>
+          <div className="reveal">
+            <p className="eyebrow">Quem conduz</p>
+            <h2 className="h2">Gente que conhece o seu negócio pelo nome.</h2>
+            <p className="body">
+              Você fala direto com quem cuida da sua contabilidade — sem robôs de atendimento e sem respostas genéricas. Cada cliente tem um responsável dedicado.
+            </p>
+            <div className="actions">
+              <Link to="/contato" className="btn btn-azul">Falar com a equipe <span className="arr">→</span></Link>
+              <Link to="/sobre" className="btn btn-ghost">Nosso espaço</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="reveal" style={{ margin: '0 48px 120px', background: '#004bff', borderRadius: 28, padding: '96px 64px', color: '#fff', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', right: 40, top: '50%', transform: 'translateY(-50%)', opacity: 0.14, animation: 'spinSlow 70s linear infinite' }}>
-          <svg width="360" height="360" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="none" stroke="#fff" strokeWidth=".7" />
-            <polygon points="50,4 58,54 50,46 42,54" fill="#fff" />
-          </svg>
-        </div>
-        <h2 className="xp" style={{ margin: '0 0 20px', fontWeight: 800, fontSize: 'clamp(36px, 4.6vw, 68px)', letterSpacing: '-.02em', lineHeight: 1, position: 'relative' }}>
-          Vamos colocar sua<br />empresa no rumo certo?
-        </h2>
-        <p style={{ margin: '0 0 40px', fontSize: 19, color: 'rgba(255,255,255,.85)', maxWidth: 520, position: 'relative' }}>
-          Fale agora com a nossa equipe e receba uma avaliação da situação contábil da sua empresa.
-        </p>
-        <a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-white" style={{ position: 'relative' }}>Chamar no WhatsApp →</a>
+      {/* FAQ */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap"><Faq /></div>
       </section>
 
       <Footer />
