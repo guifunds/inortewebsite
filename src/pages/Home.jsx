@@ -13,7 +13,7 @@ const SERVICOS = [
   { num: '03', titulo: 'Departamento pessoal', desc: 'Folha de pagamento, admissões, férias e eSocial com precisão e sem retrabalho.' },
   { num: '04', titulo: 'Planejamento tributário', desc: 'Análise do regime ideal para pagar somente o imposto necessário, dentro da lei.' },
   { num: '05', titulo: 'Consultoria e gestão', desc: 'Indicadores, fluxo de caixa e apoio à decisão para crescer com segurança.' },
-  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Regularização, declarações e acompanhamento completo para pequenos negócios. Atendemos também médias e grandes empresas em Lucro Presumido e Lucro Real.' },
+  { num: '06', titulo: 'Do MEI à grande empresa', desc: 'Simples Nacional, Lucro Presumido e Lucro Real: acompanhamento completo do pequeno negócio às operações de grande porte, com SPED e várias filiais.' },
 ]
 
 const ETAPAS = [
@@ -99,7 +99,7 @@ export default function Home() {
             <p className="eyebrow fade-up">Inorte — Contabilidade e Gestão Empresarial</p>
             <h1 className="display fade-up d1">Números claros.<br />Decisões seguras.</h1>
             <p className="lead fade-up d2">
-              Contabilidade consultiva para empresas de todos os portes, do MEI à média empresa.
+              Contabilidade consultiva para empresas de todos os portes, do MEI à grande empresa.
             </p>
             <div className="actions fade-up d3">
               <a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn lg btn-white">Falar no WhatsApp <span className="arr">→</span></a>
@@ -161,7 +161,7 @@ export default function Home() {
                 A Inorte nasceu para ser a bússola financeira das empresas que atende. Unimos rigor técnico contábil e visão de gestão para transformar obrigações fiscais em informação estratégica.
               </p>
               <p className="body">
-                Atendemos de MEIs a médias empresas com o mesmo compromisso: números em dia, riscos sob controle e um caminho claro de crescimento.
+                Atendemos de MEIs a grandes empresas com o mesmo compromisso: números em dia, riscos sob controle e um caminho claro de crescimento.
               </p>
               <Link to="/sobre" className="link" style={{ marginTop: 8 }}>Conheça a empresa <span className="arr">→</span></Link>
             </div>

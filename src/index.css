@@ -135,6 +135,12 @@ button, input, textarea { font: inherit; }
 .nav-links a.active { background: rgba(255,255,255,.18); }
 .header.scrolled .nav-links a:hover { background: var(--gelo); }
 .header.scrolled .nav-links a.active { background: var(--linha-suave); color: var(--azul); }
+.badge-novo {
+  display: inline-block; margin-left: 8px; padding: 2px 7px; border-radius: var(--r-pill); vertical-align: 2px;
+  font-family: var(--text); font-size: 11px; font-weight: 600; line-height: 1.4; letter-spacing: .03em;
+  background: #fff; color: var(--azul);
+}
+.header.scrolled .badge-novo { background: var(--azul); color: #fff; }
 .nav-right { display: flex; align-items: center; gap: 8px; }
 .nav-phone { font-size: 15px; padding: 0 12px; opacity: .92; }
 .header .btn-cta { background: #fff; color: var(--azul); }
@@ -165,6 +171,8 @@ button, input, textarea { font: inherit; }
   display: flex; justify-content: space-between; align-items: center;
 }
 .mobile-menu .mm-link span { font-family: var(--text); font-weight: 400; font-size: 14px; opacity: .7; letter-spacing: 0; }
+.mobile-menu .mm-link .mm-label { font: inherit; letter-spacing: inherit; opacity: 1; }
+.mobile-menu .mm-link .badge-novo { font-weight: 600; font-size: 12px; opacity: 1; vertical-align: 10px; }
 .mobile-menu .mm-actions { margin-top: auto; display: grid; gap: 10px; }
 body.menu-open .header .header-bar { color: #fff; background: transparent; box-shadow: none; border-color: transparent; }
 

@@ -12,7 +12,8 @@ const SERVICOS = [
   { num: '03', titulo: 'Departamento pessoal e folha', desc: 'Gestão completa da rotina trabalhista: admissões, folha de pagamento, férias, rescisões e eSocial sem erros e sem atrasos.', itens: ['Folha de pagamento', 'Admissão e rescisão', 'eSocial e FGTS', 'Férias e 13º'] },
   { num: '04', titulo: 'Planejamento tributário', desc: 'Estudo detalhado do regime tributário ideal para o seu negócio, reduzindo a carga de impostos de forma legal e segura.', itens: ['Análise de regime', 'Simulações comparativas', 'Redução legal de carga', 'Revisão de tributos'] },
   { num: '05', titulo: 'Consultoria e gestão empresarial', desc: 'Indicadores, fluxo de caixa, precificação e apoio à tomada de decisão: contabilidade que participa da estratégia do negócio.', itens: ['Indicadores e relatórios', 'Fluxo de caixa', 'Precificação', 'Apoio à decisão'] },
-  { num: '06', titulo: 'MEI e Simples Nacional', desc: 'Acompanhamento completo para pequenos negócios: declarações, guias, regularização e a hora certa de migrar de regime. Também atendemos médias e grandes empresas nos regimes de Lucro Presumido e Lucro Real.', itens: ['DASN e guias', 'Regularização', 'Desenquadramento', 'Lucro Presumido e Real'] },
+  { num: '06', titulo: 'Médias e grandes empresas', desc: 'Contabilidade completa para operações de maior porte nos regimes de Lucro Presumido e Lucro Real: apurações complexas, SPED, múltiplas filiais e relatórios gerenciais para diretoria e sócios.', itens: ['Lucro Real e Presumido', 'SPED (ECD, ECF, EFD)', 'Múltiplas filiais', 'Apoio a auditorias'] },
+  { num: '07', titulo: 'MEI e Simples Nacional', desc: 'Acompanhamento completo para pequenos negócios: declarações, guias, regularização e a hora certa de migrar de regime conforme a empresa cresce.', itens: ['DASN e guias', 'Regularização', 'Desenquadramento', 'Migração de regime'] },
 ]
 
 export default function Servicos() {
@@ -26,7 +27,7 @@ export default function Servicos() {
       <PageHero
         eyebrow="Serviços"
         title="Tudo o que sua empresa precisa, em um só lugar."
-        lead="Seis frentes integradas — do primeiro CNPJ à estratégia tributária — conduzidas pela mesma equipe."
+        lead="Sete frentes integradas — do MEI à grande empresa, do primeiro CNPJ à estratégia tributária — conduzidas pela mesma equipe."
         aside={
           <div className="pills-row">
             {['MEI', 'Simples Nacional', 'Lucro Presumido', 'Lucro Real', 'eSocial', 'SPED'].map((r) => <Pill key={r}>{r}</Pill>)}

@@ -32,6 +32,7 @@ export default function Footer({ ctaTitle = 'Vamos colocar sua empresa no rumo c
             <span className="k">Navegação</span>
             <Link to="/">Home</Link>
             <Link to="/servicos">Serviços</Link>
+            <Link to="/automacao">Automação com IA</Link>
             <Link to="/sobre">Sobre</Link>
             <Link to="/contato">Contato</Link>
           </div>

@@ -47,7 +47,7 @@ export default function Sobre() {
             </div>
             <div>
               <p className="body">A Inorte Contabilidade e Gestão Empresarial nasceu de uma convicção: os números de uma empresa devem servir para decidir, não apenas para cumprir obrigações. Por isso unimos, desde o início, a técnica contábil ao olhar de gestão.</p>
-              <p className="body">Atendemos empresas de todos os portes — do MEI que está começando à média empresa em expansão — com processos digitais, prazos rigorosos e uma relação próxima e consultiva.</p>
+              <p className="body">Atendemos empresas de todos os portes — do MEI que está começando às médias e grandes empresas — com processos digitais, prazos rigorosos e uma relação próxima e consultiva.</p>
               <p className="body" style={{ marginBottom: 0 }}>Assim como a seta da rosa dos ventos que carrega nossa marca, nosso papel é simples de dizer e exigente de cumprir: manter sua empresa sempre apontada para o Norte.</p>
             </div>
           </div>

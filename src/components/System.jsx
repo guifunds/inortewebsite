@@ -35,7 +35,7 @@ export function PageHero({ eyebrow, title, lead, aside }) {
 
 export const FAQ_PADRAO = [
   { q: 'Vocês atendem empresas fora de Salvador?', a: 'Sim. O atendimento é 100% online para todo o Brasil, e quem preferir pode marcar horário no nosso escritório no Jardim dos Pássaros.' },
-  { q: 'Qual o porte de empresa que vocês atendem?', a: 'Do MEI que está começando à média empresa em expansão. Atendemos Simples Nacional e também médias e grandes empresas nos regimes de Lucro Presumido e Lucro Real.' },
+  { q: 'Qual o porte de empresa que vocês atendem?', a: 'De todos os portes: do MEI que está começando às médias e grandes empresas, nos regimes de Simples Nacional, Lucro Presumido e Lucro Real.' },
   { q: 'Como funciona a troca de contador?', a: 'Começamos com um diagnóstico do momento da empresa, do regime atual e das pendências. Depois organizamos documentos, acessos e rotinas para a transição acontecer sem travar a operação.' },
   { q: 'Em quanto tempo vocês respondem?', a: 'O prazo médio de resposta para demandas dos clientes é de 48 horas, e cada cliente fala direto com um responsável que conhece o negócio.' },
   { q: 'Como peço um orçamento?', a: 'Pelo WhatsApp ou pelo formulário da página de contato — a mensagem chega pronta para a nossa equipe, sem compromisso.' },

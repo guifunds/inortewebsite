@@ -6,6 +6,7 @@ import { WHATSAPP, PHONE_DISPLAY, PHONE_TEL } from '../lib/contact.js'
 const LINKS = [
   { to: '/', label: 'Home', end: true },
   { to: '/servicos', label: 'Serviços' },
+  { to: '/automacao', label: 'Automação', novo: true },
   { to: '/sobre', label: 'Sobre' },
   { to: '/contato', label: 'Contato' },
 ]
@@ -46,7 +47,7 @@ export default function Header() {
           <nav className="nav-links">
             {LINKS.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={({ isActive }) => (isActive ? 'active' : '')}>
-                {l.label}
+                {l.label}{l.novo && <span className="badge-novo">Novo</span>}
               </NavLink>
             ))}
           </nav>
@@ -69,7 +70,7 @@ export default function Header() {
       <div className={`mobile-menu${open ? ' open' : ''}`} aria-hidden={!open}>
         {LINKS.map((l, i) => (
           <Link key={l.to} to={l.to} className="mm-link" tabIndex={open ? 0 : -1}>
-            {l.label} <span>0{i + 1}</span>
+            <span className="mm-label">{l.label}{l.novo && <span className="badge-novo">Novo</span>}</span> <span>0{i + 1}</span>
           </Link>
         ))}
         <div className="mm-actions">
